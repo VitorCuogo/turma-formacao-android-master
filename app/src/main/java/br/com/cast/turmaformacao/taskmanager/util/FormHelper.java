@@ -2,9 +2,7 @@ package br.com.cast.turmaformacao.taskmanager.util;
 
 import android.widget.EditText;
 
-/**
- * Created by Administrador on 15/09/2015.
- */
+
 public final class FormHelper {
 
     private FormHelper() {

@@ -21,7 +21,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
-    public static DataBaseHelper getIstance(){
+    public static DataBaseHelper getInstance(){
         return new DataBaseHelper(ApplicationUtil.getApplicationContext());
     }
 
@@ -33,6 +33,9 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 
         Log.e("Task Manager", "Criando Tabela Label");
         db.execSQL(LabelContract.getCreateTableScript());
+
+        Log.e("Task Manager", "Criando Tabela Cadastro");
+        db.execSQL(CadastroContract.getCreateTableScript());
     }
 
     @Override

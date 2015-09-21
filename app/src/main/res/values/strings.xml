@@ -25,6 +25,11 @@
     <string name="lbl_label_add">Label Add</string>
     <string name="lbl_titleColor">Colors</string>
     <string name="lbl_cancel">Cancel</string>
+    <string name="button_signup">Sign Up</string>
+    <string name="lbl_loginCadastro">Login</string>
+    <string name="lbl_passwordCadastro">Password</string>
+    <string name="button_register">Register</string>
+    <string name="msg_user_pass_incorrect">Login ou password incorrect</string>
 
 
 </resources>

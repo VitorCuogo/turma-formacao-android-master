@@ -20,9 +20,7 @@ import br.com.cast.turmaformacao.taskmanager.controllers.adpters.TaskListAdpater
 import br.com.cast.turmaformacao.taskmanager.model.entities.Task;
 import br.com.cast.turmaformacao.taskmanager.model.services.TaskBusinessServices;
 
-/**
- * Created by Administrador on 15/09/2015.
- */
+
 public class TaskListActivity extends AppCompatActivity {
 
     private ListView listViewTaskList;

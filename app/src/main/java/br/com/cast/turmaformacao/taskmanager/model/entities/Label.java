@@ -3,9 +3,6 @@ package br.com.cast.turmaformacao.taskmanager.model.entities;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-/**
- * Created by Administrador on 17/09/2015.
- */
 public class Label implements Parcelable {
 
     private Long id;
@@ -68,6 +65,7 @@ public class Label implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
 
         dest.writeLong(id == null ? -1 : id);
+        dest.writeInt(color == null ? -1 : this.color.ordinal());
         dest.writeString(name == null ? "" : name);
         dest.writeString(description == null ? "" : description);
 
@@ -94,5 +92,7 @@ public class Label implements Parcelable {
         public Label[] newArray(int size) {
             return new Label[size];
         }
+
+
     };
 }

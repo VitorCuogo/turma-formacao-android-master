@@ -35,7 +35,7 @@ public class LabelContract {
         create.append(ID + " INTEGER PRIMARY KEY, ");
         create.append(NAME + " TEXT NOT NULL, ");
         create.append(DESCRIPTION + " TEXT, ");
-        create.append(COLOR + " TEXT ");
+        create.append(COLOR + " TEXT NOT NULL ");
         create.append(" ); ");
 
         return create.toString();

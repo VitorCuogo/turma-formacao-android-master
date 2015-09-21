@@ -19,7 +19,7 @@ public final class TaskRepository {
 
     public static void save(Task task) {
 
-        DataBaseHelper dataBaseHelper = DataBaseHelper.getIstance();
+        DataBaseHelper dataBaseHelper = DataBaseHelper.getInstance();
 
         SQLiteDatabase db = dataBaseHelper.getWritableDatabase();
         ContentValues values = TaskContract.getContentValues(task);
@@ -42,7 +42,7 @@ public final class TaskRepository {
 
     public static void delete(long id) {
 
-        DataBaseHelper dataBaseHelper = DataBaseHelper.getIstance();
+        DataBaseHelper dataBaseHelper = DataBaseHelper.getInstance();
         SQLiteDatabase db = dataBaseHelper.getWritableDatabase();
 
         String where = TaskContract.ID + " = ? ";
@@ -57,7 +57,7 @@ public final class TaskRepository {
 
     public static List<Task> getAll() {
 
-        DataBaseHelper dataBaseHelper = DataBaseHelper.getIstance();
+        DataBaseHelper dataBaseHelper = DataBaseHelper.getInstance();
         SQLiteDatabase db = dataBaseHelper.getReadableDatabase();
         Cursor cursor = db.query(TaskContract.TABLE, TaskContract.COLUNS, null, null, null, null, TaskContract.ID);
         List<Task> values = TaskContract.getTasks(cursor);

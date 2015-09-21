@@ -15,7 +15,7 @@
     <string name="msg_required">Campo obrigatório</string>
     <string name="msg_save_sucessfull">Salvo com sucesso!</string>
     <string name="button_saveTask">Salvar</string>
-    <string name="msg_delete_sucessfull">Registro deletacom com sucesso</string>
+    <string name="msg_delete_sucessfull">Registro deletado com sucesso</string>
     <string name="lbl_confirm">Confirmar</string>
     <string name="msg_confirm_delete">Deseja deletar esta tarefa?</string>
     <string name="lbl_yes">Sim</string>
@@ -26,5 +26,10 @@
     <string name="lbl_label_add">Add label</string>
     <string name="lbl_titleColor">Cores</string>
     <string name="lbl_cancel">Cancelar</string>
+    <string name="button_signup">Cadastre-se</string>
+    <string name="lbl_loginCadastro">Usuario</string>
+    <string name="lbl_passwordCadastro">Senha</string>
+    <string name="button_register">Cadastrar</string>
+    <string name="msg_user_pass_incorrect">Usuário ou senha incorretos</string>
 
 </resources>

@@ -20,7 +20,7 @@ public class LabelRepository {
 
     public static void save(Label label) {
 
-        DataBaseHelper dataBaseHelper = DataBaseHelper.getIstance();
+        DataBaseHelper dataBaseHelper = DataBaseHelper.getInstance();
 
         SQLiteDatabase db = dataBaseHelper.getWritableDatabase();
         ContentValues values = LabelContract.getContentValues(label);
@@ -43,7 +43,7 @@ public class LabelRepository {
 
     public static List<Label> getAll() {
 
-        DataBaseHelper dataBaseHelper = DataBaseHelper.getIstance();
+        DataBaseHelper dataBaseHelper = DataBaseHelper.getInstance();
         SQLiteDatabase db = dataBaseHelper.getReadableDatabase();
 
         Cursor cursor = db.query(LabelContract.TABLE, LabelContract.COLUNS, null, null, null, null, LabelContract.ID);
@@ -57,7 +57,7 @@ public class LabelRepository {
 
     public static void delete(long id) {
 
-        DataBaseHelper dataBaseHelper = DataBaseHelper.getIstance();
+        DataBaseHelper dataBaseHelper = DataBaseHelper.getInstance();
         SQLiteDatabase db = dataBaseHelper.getWritableDatabase();
 
         String where = LabelContract.ID + " = ? ";

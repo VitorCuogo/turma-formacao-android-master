@@ -15,11 +15,7 @@ import java.util.List;
 import br.com.cast.turmaformacao.taskmanager.R;
 import br.com.cast.turmaformacao.taskmanager.model.entities.Color;
 
-/**
- * Created by Administrador on 17/09/2015.
- */
 public class ColorListAdapter extends BaseAdapter {
-
     private Color[] values;
     private Activity context;
 

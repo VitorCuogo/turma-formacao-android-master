@@ -1,8 +1,5 @@
 package br.com.cast.turmaformacao.taskmanager.model.entities;
 
-/**
- * Created by Administrador on 17/09/2015.
- */
 public enum Color {
 
     RED("#F44336"),
