@@ -4,11 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.cast.turmaformacao.taskmanager.model.entities.Task;
+import br.com.cast.turmaformacao.taskmanager.model.persistence.LabelRepository;
 import br.com.cast.turmaformacao.taskmanager.model.persistence.TaskRepository;
 
-/**
- * Created by Administrador on 15/09/2015.
- */
+
 public final class TaskBusinessServices {
 
     private TaskBusinessServices() {
@@ -16,7 +15,13 @@ public final class TaskBusinessServices {
     }
 
     public static List<Task> findAll() {
-        return TaskRepository.getAll();
+        List<Task> list = TaskRepository.getAll();
+
+        for(Task t: list){
+            t.setLabel(LabelRepository.getId(t.getLabel().getId()));
+        }
+
+        return list;
     }
 
     public static void save(Task task) {

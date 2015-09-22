@@ -109,6 +109,7 @@ public class LabelFormActivity extends AppCompatActivity{
             bindLabel();
             LabelBusinessServices.save(this.label);
             Toast.makeText(this, LabelBusinessServices.findAll().toString(),Toast.LENGTH_SHORT).show();
+            LabelFormActivity.this.finish();
         }
     }
 

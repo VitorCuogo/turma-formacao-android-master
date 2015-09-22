@@ -31,5 +31,6 @@
     <string name="lbl_passwordCadastro">Senha</string>
     <string name="button_register">Cadastrar</string>
     <string name="msg_user_pass_incorrect">Usuário ou senha incorretos</string>
+    <string name="button_newLabel">Nova Label</string>
 
 </resources>

@@ -1,27 +1,32 @@
 package br.com.cast.turmaformacao.taskmanager.controllers.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import java.io.Serializable;
+import java.util.List;
 
 import br.com.cast.turmaformacao.taskmanager.R;
+import br.com.cast.turmaformacao.taskmanager.controllers.adpters.LabelListAdapter;
+import br.com.cast.turmaformacao.taskmanager.model.entities.Label;
 import br.com.cast.turmaformacao.taskmanager.model.entities.Task;
+import br.com.cast.turmaformacao.taskmanager.model.services.LabelBusinessServices;
 import br.com.cast.turmaformacao.taskmanager.model.services.TaskBusinessServices;
 import br.com.cast.turmaformacao.taskmanager.util.FormHelper;
 
-/**
- * Created by Administrador on 15/09/2015.
- */
 public class TaskFormActivity extends AppCompatActivity {
 
+    private Spinner spinner;
     private EditText editTextName;
     private EditText editTextDescription;
     private Button buttonSave;
+    private Button buttonNewLabel;
     private Task task;
     public static final String PARAM_TASK = "PARAM_TASK";
 
@@ -34,6 +39,35 @@ public class TaskFormActivity extends AppCompatActivity {
         bindEditTextName();
         bindEditTextDescription();
         bindButtonSave();
+        bindButtonNewLabel();
+        bindSpinner();
+    }
+
+    private void bindButtonNewLabel() {
+        buttonNewLabel = (Button) findViewById(R.id.buttonFormNewLabel);
+        buttonNewLabel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent goToLabelFormActivity = new Intent(TaskFormActivity.this, LabelFormActivity.class);
+                startActivity(goToLabelFormActivity);
+            }
+        });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        onUpdateSpinnerList();
+    }
+
+    private void bindSpinner() {
+        spinner = (Spinner) findViewById(R.id.spinnerLabel);
+        onUpdateSpinnerList();
+    }
+
+    private void onUpdateSpinnerList() {
+        List<Label> labels = LabelBusinessServices.findAll();
+        spinner.setAdapter(new LabelListAdapter(TaskFormActivity.this, labels));
     }
 
     private void initTask() {
@@ -65,9 +99,13 @@ public class TaskFormActivity extends AppCompatActivity {
         });
     }
 
+
+
     private void bindTask() {
         task.setName(editTextName.getText().toString());
         task.setDescription(editTextDescription.getText().toString());
+        Label label = (Label) spinner.getSelectedItem();
+        task.setLabel(label);
     }
 
     private void bindEditTextName() {

@@ -5,18 +5,12 @@ import android.os.Parcelable;
 
 import java.io.Serializable;
 
-/**
- * Created by Administrador on 15/09/2015.
- */
 public class Task implements Parcelable {
 
     private Long id;
     private String name;
     private String description;
-
-    public Long getId() {
-        return id;
-    }
+    private Label label;
 
     public Task() {
         super();
@@ -25,6 +19,10 @@ public class Task implements Parcelable {
     public Task(Parcel imp) {
         super();
         readFromParcel(imp);
+    }
+
+    public Long getId() {
+        return id;
     }
 
     public void setId(Long id) {
@@ -45,6 +43,14 @@ public class Task implements Parcelable {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Label getLabel() {
+        return label;
+    }
+
+    public void setLabel(Label label) {
+        this.label = label;
     }
 
     @Override
@@ -112,8 +118,5 @@ public class Task implements Parcelable {
         }
 
     };
-
-
-
 
 }
