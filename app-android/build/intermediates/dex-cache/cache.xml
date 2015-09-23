@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\Administrador\Curso Android\turma-formacao-android-master\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
+        <dex dex="C:\Users\Administrador\Curso Android\turma-formacao-android-master\app\build\intermediates\pre-dexed\debug\classes-cae5fe51875328f6312ebbb800ab05b0a6f14fc2.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrador\Curso Android\turma-formacao-android-master\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
+        <dex dex="C:\Users\Administrador\Curso Android\turma-formacao-android-master\app\build\intermediates\pre-dexed\debug\classes-997300683e426ad992889bb22223a592fa94aa05.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrador\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.0\support-annotations-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
+        <dex dex="C:\Users\Administrador\Curso Android\turma-formacao-android-master\app\build\intermediates\pre-dexed\debug\support-annotations-22.2.0-98d47de06d32194688a7c4d89cc48108878df85e.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrador\Curso Android\turma-formacao-android-master\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\libs\internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="C:\Users\Administrador\Curso Android\turma-formacao-android-master\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.0-df3ef588f42b73e74b2579c4c55c7c5214d5b378.jar" />
+    </item>
+
+</items>
