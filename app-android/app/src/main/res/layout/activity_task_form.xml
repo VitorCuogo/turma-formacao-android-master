@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:hint="@string/lbl_taskName"
+        android:id="@+id/editTextTaskName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:hint="@string/lbl_taskDescription"
+        android:id="@+id/editTextTaskDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="30dp">
+
+        <Spinner
+            android:id="@+id/spinnerLabel"
+            android:layout_width="0dp"
+            android:layout_weight="6"
+            android:layout_height="wrap_content">
+        </Spinner>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/buttonFormNewLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/button_newLabel"
+            android:background="#E57373"
+            android:textColor="#ffffff"
+            android:layout_marginRight="20dp"/>
+
+        <Button
+            android:id="@+id/button_saveTask"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#81C784"
+            android:textColor="#ffffff"
+            android:text="@string/button_saveTask"
+            android:layout_marginLeft="20dp"/>
+    </LinearLayout>
+
+
+
+</LinearLayout>
