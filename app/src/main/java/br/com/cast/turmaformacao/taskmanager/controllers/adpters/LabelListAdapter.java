@@ -1,6 +1,7 @@
 package br.com.cast.turmaformacao.taskmanager.controllers.adpters;
 
 import android.app.Activity;
+import android.graphics.PorterDuff;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -46,7 +47,7 @@ public class LabelListAdapter extends BaseAdapter{
 
         int hexColor = android.graphics.Color.parseColor(label.getColor().getHex());
 
-        color.setBackgroundColor(hexColor);
+        color.getBackground().setColorFilter(hexColor, PorterDuff.Mode.SRC);
         name.setText(label.getName());
 
         return view;

@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:layout_margin="15dp">
 
     <EditText
         android:hint="@string/lbl_taskName"
@@ -37,14 +38,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        android:gravity="center">
+        android:gravity="right"
+        android:layout_marginTop="20dp">
 
         <Button
             android:id="@+id/buttonFormNewLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/button_newLabel"
-            android:background="#E57373"
+            android:background="#2196F3"
             android:textColor="#ffffff"
             android:layout_marginRight="20dp"/>
 
@@ -52,8 +54,8 @@
             android:id="@+id/button_saveTask"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#81C784"
-            android:textColor="#ffffff"
+            style="?attr/borderlessButtonStyle"
+            android:textColor="#2196F3"
             android:text="@string/button_saveTask"
             android:layout_marginLeft="20dp"/>
     </LinearLayout>

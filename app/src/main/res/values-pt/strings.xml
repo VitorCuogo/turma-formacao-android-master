@@ -5,7 +5,7 @@
     <string name="action_settings">Configurações</string>
     <string name="lbl_login">Usuário</string>
     <string name="lbl_password">Senha</string>
-    <string name="lbl_enter">Entrar</string>
+    <string name="button_enter">Entrar</string>
     <string name="lbl_menu_editar">Update</string>
     <string name="lbl_menu_excluir">Excluir</string>
     <string name="lbl_taskName">Nome</string>
@@ -32,5 +32,12 @@
     <string name="button_register">Cadastrar</string>
     <string name="msg_user_pass_incorrect">Usuário ou senha incorretos</string>
     <string name="button_newLabel">Nova Label</string>
+    <string name="lbl_zipcode">CEP</string>
+    <string name="button_search">Buscar</string>
+    <string name="lbl_type">Tipo de logradouro</string>
+    <string name="lbl_street">Logradouro</string>
+    <string name="lbl_neighborhood">Neighborhood</string>
+    <string name="lbl_city">Cidade</string>
+    <string name="lbl_state">Estado</string>
 
 </resources>

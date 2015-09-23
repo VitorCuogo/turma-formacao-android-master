@@ -8,9 +8,6 @@ import java.util.List;
 
 import br.com.cast.turmaformacao.taskmanager.model.entities.Task;
 
-/**
- * Created by Administrador on 16/09/2015.
- */
 public final class TaskRepository {
 
     private TaskRepository() {

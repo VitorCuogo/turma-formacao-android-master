@@ -4,7 +4,7 @@
     <string name="action_settings">Settings</string>
     <string name="lbl_login">Login</string>
     <string name="lbl_password">Password</string>
-    <string name="lbl_enter">Login</string>
+    <string name="button_enter">Sign in</string>
     <string name="lbl_menu_editar">Update</string>
     <string name="lbl_menu_excluir">Delete</string>
     <string name="lbl_taskName">Task Name</string>
@@ -31,6 +31,13 @@
     <string name="button_register">Register</string>
     <string name="msg_user_pass_incorrect">Login or password incorrect</string>
     <string name="button_newLabel">New Label</string>
+    <string name="lbl_zipcode">Zip Code</string>
+    <string name="button_search">Search</string>
+    <string name="lbl_type">Street type</string>
+    <string name="lbl_street">Street</string>
+    <string name="lbl_neighborhood">Neighborhood</string>
+    <string name="lbl_city">City</string>
+    <string name="lbl_state">State</string>
 
 
 </resources>

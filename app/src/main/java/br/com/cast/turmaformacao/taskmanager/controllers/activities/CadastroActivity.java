@@ -15,6 +15,13 @@ import br.com.cast.turmaformacao.taskmanager.util.FormHelper;
 public class CadastroActivity extends AppCompatActivity{
     private EditText editTextLogin;
     private EditText editTextPassword;
+    private EditText editTextZipCode;
+    private EditText editTextType;
+    private EditText editTextStreet;
+    private EditText editTextNeighborhood;
+    private EditText editTextCity;
+    private EditText editTextState;
+    private Button buttonSearch;
     private Button buttonRegister;
     private Cadastro cadastro;
     public static final String PARAM_TASK = "PARAM_TASK";
@@ -27,7 +34,22 @@ public class CadastroActivity extends AppCompatActivity{
         initCadastro();
         bindEditTextPassword();
         bindEditTextLogin();
+        bindAddress();
+        bindButtonSearch();
         bindButtonRegister();
+    }
+
+    private void bindButtonSearch() {
+        buttonSearch = (Button) findViewById(R.id.buttonSearch);
+    }
+
+    private void bindAddress() {
+        editTextZipCode = (EditText) findViewById(R.id.editTextZipCode);
+        editTextType = (EditText) findViewById(R.id.editTextType);
+        editTextStreet = (EditText) findViewById(R.id.editTextStreet);
+        editTextNeighborhood = (EditText) findViewById(R.id.editTextNeighborhood);
+        editTextCity = (EditText) findViewById(R.id.editTextCity);
+        editTextState = (EditText) findViewById(R.id.editTextState);
     }
 
     private void initCadastro() {
