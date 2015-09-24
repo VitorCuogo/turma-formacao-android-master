@@ -44,8 +44,13 @@ public class LabelListAdapter extends BaseAdapter{
 
         View color = view.findViewById(R.id.list_item_label_color);
         TextView name = (TextView) view.findViewById(R.id.list_item_label_name);
+        String c = "#ffffff";
 
-        int hexColor = android.graphics.Color.parseColor(label.getColor().getHex());
+        if(label.getColor() != null){
+            c = label.getColor().getHex();
+        }
+
+        int hexColor = android.graphics.Color.parseColor(c);
 
         color.getBackground().setColorFilter(hexColor, PorterDuff.Mode.SRC);
         name.setText(label.getName());

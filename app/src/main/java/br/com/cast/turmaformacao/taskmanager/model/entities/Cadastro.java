@@ -1,5 +1,6 @@
 package br.com.cast.turmaformacao.taskmanager.model.entities;
 
+import android.location.*;
 import android.os.Parcel;
 import android.os.Parcelable;
 
@@ -8,6 +9,7 @@ public class Cadastro implements Parcelable {
     private Long id;
     private String login;
     private String password;
+    private Address address;
 
     public Cadastro() {
         super();

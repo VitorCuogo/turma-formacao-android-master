@@ -32,28 +32,9 @@ public class LoginActivity extends AppCompatActivity {
         bindEditTextPassword();
         bindButtonLogin();
         bindButtonSignUp();
-
-
-        new GetAddressTask().execute("14801030");
     }
 
-    private class GetAddressTask extends AsyncTask<String, Void, Address> {
 
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-        }
-
-        @Override
-        protected Address doInBackground(String... params) {
-            return AddressService.getAddressByZipCode(params[0]);
-        }
-
-        @Override
-        protected void onPostExecute(Address address) {
-            super.onPostExecute(address);
-        }
-    }
 
     private void bindButtonLogin() {
         buttonLogin = (Button) findViewById(R.id.buttonLogin);

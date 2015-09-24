@@ -5,6 +5,7 @@
     android:orientation="vertical"
     android:layout_margin="15dp">
 
+
     <EditText
         android:hint="@string/lbl_taskName"
         android:id="@+id/editTextTaskName"

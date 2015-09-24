@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import java.util.List;
 
 import br.com.cast.turmaformacao.taskmanager.model.entities.Task;
+import br.com.cast.turmaformacao.taskmanager.model.http.TaskService;
 
 public final class TaskRepository {
 
@@ -64,6 +65,20 @@ public final class TaskRepository {
 
         return values;
 
+    }
+
+    public static Long getIdByWebId(Long web_id){
+        DataBaseHelper dataBaseHelper = DataBaseHelper.getInstance();
+        SQLiteDatabase db = dataBaseHelper.getReadableDatabase();
+
+        String where = TaskContract.WEB_ID + " = ? ";
+        String params[] = {String.valueOf(web_id)};
+
+        Cursor cursor = db.query(TaskContract.TABLE, TaskContract.COLUNS, where, params, null, null, null);
+
+        Task task = TaskContract.getTask(cursor);
+
+        return task == null ? null : task.getId();
     }
 
 }

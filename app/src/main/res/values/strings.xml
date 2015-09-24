@@ -38,6 +38,8 @@
     <string name="lbl_neighborhood">Neighborhood</string>
     <string name="lbl_city">City</string>
     <string name="lbl_state">State</string>
+    <string name="lbl_webid">Web ID</string>
+    <string name="lbl_update">Update</string>
 
 
 </resources>

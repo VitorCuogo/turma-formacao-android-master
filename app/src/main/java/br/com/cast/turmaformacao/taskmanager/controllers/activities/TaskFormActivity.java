@@ -1,6 +1,8 @@
 package br.com.cast.turmaformacao.taskmanager.controllers.activities;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -8,14 +10,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
-
-import java.io.Serializable;
 import java.util.List;
 
 import br.com.cast.turmaformacao.taskmanager.R;
 import br.com.cast.turmaformacao.taskmanager.controllers.adpters.LabelListAdapter;
 import br.com.cast.turmaformacao.taskmanager.model.entities.Label;
 import br.com.cast.turmaformacao.taskmanager.model.entities.Task;
+import br.com.cast.turmaformacao.taskmanager.model.http.TaskService;
 import br.com.cast.turmaformacao.taskmanager.model.services.LabelBusinessServices;
 import br.com.cast.turmaformacao.taskmanager.model.services.TaskBusinessServices;
 import br.com.cast.turmaformacao.taskmanager.util.FormHelper;
@@ -30,6 +31,8 @@ public class TaskFormActivity extends AppCompatActivity {
     private Task task;
     public static final String PARAM_TASK = "PARAM_TASK";
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,10 +41,18 @@ public class TaskFormActivity extends AppCompatActivity {
         initTask();
         bindEditTextName();
         bindEditTextDescription();
+        bindWebID();
         bindButtonSave();
         bindButtonNewLabel();
         bindSpinner();
     }
+
+
+    private void bindWebID(){
+        editTextName = (EditText) findViewById(R.id.editTextTaskName);
+        editTextDescription = (EditText) findViewById(R.id.editTextTaskDescription);
+    }
+
 
     private void bindButtonNewLabel() {
         buttonNewLabel = (Button) findViewById(R.id.buttonFormNewLabel);
@@ -108,7 +119,7 @@ public class TaskFormActivity extends AppCompatActivity {
         task.setLabel(label);
     }
 
-    private void bindEditTextName() {
+   private void bindEditTextName() {
         editTextName = (EditText) findViewById(R.id.editTextTaskName);
         editTextName.setText(task.getName() == null ? "" : task.getName());
 

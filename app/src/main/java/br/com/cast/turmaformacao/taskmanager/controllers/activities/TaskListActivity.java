@@ -1,8 +1,10 @@
 package br.com.cast.turmaformacao.taskmanager.controllers.activities;
 
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.ContextMenu;
@@ -18,6 +20,7 @@ import java.util.List;
 import br.com.cast.turmaformacao.taskmanager.R;
 import br.com.cast.turmaformacao.taskmanager.controllers.adpters.TaskListAdpater;
 import br.com.cast.turmaformacao.taskmanager.model.entities.Task;
+import br.com.cast.turmaformacao.taskmanager.model.http.TaskService;
 import br.com.cast.turmaformacao.taskmanager.model.services.TaskBusinessServices;
 
 
@@ -25,6 +28,38 @@ public class TaskListActivity extends AppCompatActivity {
 
     private ListView listViewTaskList;
     private Task selectedTask;
+    private ProgressDialog progressDialog;
+    private List<Task> getTasks;
+
+    private class GetTaskWebId extends AsyncTask<Void, Void, Void> {
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            progressDialog = new ProgressDialog(TaskListActivity.this);
+            progressDialog.setMessage("Carregando");
+            progressDialog.show();
+
+        }
+
+        @Override
+        protected Void doInBackground(Void... params) {
+            TaskBusinessServices.syncronized();
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
+            onUpdateList();
+            progressDialog.dismiss();
+        }
+
+        @Override
+        protected void onProgressUpdate(Void... values) {
+            super.onProgressUpdate(values);
+        }
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,10 +99,17 @@ public class TaskListActivity extends AppCompatActivity {
             case R.id.menu_add:
                 onMenuAddClick();
                 break;
+            case R.id.menu_update:
+                onMenuUpdateTasks();
         }
 
         return super.onOptionsItemSelected(item);
     }
+
+    private void onMenuUpdateTasks() {
+        new GetTaskWebId().execute();
+    }
+
 
     @Override
     protected void onResume() {
